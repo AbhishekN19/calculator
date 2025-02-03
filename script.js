@@ -4,6 +4,7 @@ let opr;
 let int = 0, val;
 let disp = '';
 
+// To get value input by user as a number
 function getNumbers(eleId) {
     let n = document.getElementById(eleId);
     n = n.value;
@@ -12,6 +13,7 @@ function getNumbers(eleId) {
     return n;
 }
 
+// To get the result 
 function getResult() {
     b = getNumbers("inputNum");
     document.getElementById('comp').value = disp + ' ' + b;
@@ -61,6 +63,7 @@ function setAllClear() {
     opr = '';
 }
 
+// issue when number is not initialized first
 // function setNumber(val) {
 //     int = getNumbers("inputNum");
 //     if (int == NaN) {int = 0;}
