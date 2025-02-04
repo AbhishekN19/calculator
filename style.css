@@ -17,6 +17,13 @@
             text-align: right;
         }
 
+        #dis {
+            color: white;
+        }
+        #dis:hover {
+            background-color: white;
+        }
+
         .key {
             padding: 10px 0;
         }

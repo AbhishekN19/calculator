@@ -59,8 +59,20 @@ function setOperation(opr) {
 function setAllClear() {
     document.getElementById('inputNum').value = '';
     document.getElementById('result').value = '';
+    document.getElementById('comp').value='';
     op = '';
     opr = '';
+
+}
+
+
+function numPad(num) {
+    document.getElementById('inputNum').value = document.getElementById('inputNum').value + num;
+    
+}
+
+function numSign() {
+    document.getElementById('inputNum').value = getNumbers('inputNum') * -1;
 }
 
 // issue when number is not initialized first
@@ -101,11 +113,4 @@ function setAllClear() {
 //         }
 //         document.getElementById('inputNum').value = int;
 // }
-
-function numPad(num) {
-    document.getElementById('inputNum').value = document.getElementById('inputNum').value + num;
-
-}
-    
-
 

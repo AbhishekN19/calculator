@@ -20,7 +20,7 @@
             <div class="key-num">
                 <div class="key-fun">
                     <button class = "key key-fun_style" type="button" id="clr-btn" onclick="setAllClear()">AC</button>
-                    <button class = "key key-fun_style" type="button">+/-</button>
+                    <button class = "key key-fun_style" type="button" onclick = "numSign()">+/-</button>
                     <button class = "key key-fun_style" type="button">&#x2190;</button><br>  
                 </div>
 
@@ -34,7 +34,7 @@
                     <button class = "key num-btn" type="button" onclick="numPad(7)">7</button>
                     <button class = "key num-btn" type="button" onclick="numPad(8)">8</button>
                     <button class = "key num-btn" type="button" onclick="numPad(9)">9</button>
-                    <button class = "key num-btn" type="button" disabled>.</button>
+                    <button class = "key num-btn" type="button" disabled id="dis">.</button>
                     <button class = "key num-btn" type="button"  onclick="numPad(0)">0</button>
                     <button class = "key num-btn" type="button" >.</button>
                 </div>
