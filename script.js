@@ -3,6 +3,7 @@ let op;
 let opr;
 let int = 0, val;
 let disp = '';
+let s = '';
 
 // To get value input by user as a number
 function getNumbers(eleId) {
@@ -33,8 +34,7 @@ function getResult() {
             result = a / b;
             break;
     }
-    
-    document.getElementById('result').value = result ;
+    document.getElementById('inputNum').value = result ;
 }
 function setOperation(opr) {
     a = getNumbers("inputNum");
@@ -58,11 +58,14 @@ function setOperation(opr) {
 }
 function setAllClear() {
     document.getElementById('inputNum').value = '';
-    document.getElementById('result').value = '';
     document.getElementById('comp').value='';
     op = '';
     opr = '';
 
+}
+function backSpace() {
+    s = document.getElementById('inputNum').value;
+    document.getElementById('inputNum').value = s.slice(0, -1 );
 }
 
 

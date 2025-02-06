@@ -12,16 +12,15 @@
     <h1>Calculator</h1>
     <div class="calc">
         <div class="disp">
-            <input class= "in-num" type= "number" id= "inputNum" name= "dig">
             <input class= "compute" type= "text" id= "comp" name= "computing" disabled>
-            <input class= "result" type= "number" id= "result" name= "result" disabled>
+            <input class= "in-num" type= "number" id= "inputNum" name= "dig">
         </div>
         <div class="keys">
             <div class="key-num">
                 <div class="key-fun">
                     <button class = "key key-fun_style" type="button" id="clr-btn" onclick="setAllClear()">AC</button>
                     <button class = "key key-fun_style" type="button" onclick = "numSign()">+/-</button>
-                    <button class = "key key-fun_style" type="button">&#x2190;</button><br>  
+                    <button class = "key key-fun_style" type="button" onclick = "backSpace()">&#x2190;</button><br>  
                 </div>
 
                 <div class="numb">
