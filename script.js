@@ -4,6 +4,7 @@ let opr;
 let int = 0, val;
 let disp = '';
 let s = '';
+let temp = 0, i=0;
 
 // To get value input by user as a number
 function getNumbers(eleId) {
@@ -33,11 +34,15 @@ function getResult() {
         case "div":
             result = a / b;
             break;
+        case "non":
+             result = a;
     }
     document.getElementById('inputNum').value = result ;
+    return(result);
 }
 function setOperation(opr) {
-    a = getNumbers("inputNum");
+
+
     document.getElementById('inputNum').value = '';
     switch(opr) {
         case "+":
@@ -52,8 +57,16 @@ function setOperation(opr) {
         case "/":
             op = "div"
             break;
+        default :
+            op = "non";
     }
+    if(op == 'non'){
+        disp = a;
+        document.getElementById('inputNum').value = disp;
+    }
+    else {
     disp =  a + ' ' + opr;
+    }
     document.getElementById('comp').value = disp;
 }
 function setAllClear() {
@@ -61,6 +74,7 @@ function setAllClear() {
     document.getElementById('comp').value='';
     op = '';
     opr = '';
+    i=0;
 
 }
 function backSpace() {
@@ -78,6 +92,18 @@ function numSign() {
     document.getElementById('inputNum').value = getNumbers('inputNum') * -1;
 }
 
+function processFun(opr) {
+    if(i==0) {
+        a = getNumbers("inputNum");
+        setOperation(opr);
+        i++;
+    }
+    else {
+        temp = getResult();
+        a = temp;
+        setOperation(opr);
+    }
+}
 // issue when number is not initialized first
 // function setNumber(val) {
 //     int = getNumbers("inputNum");
