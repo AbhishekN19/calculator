@@ -13,7 +13,7 @@
     <div class="calc">
         <div class="disp">
             <input class= "compute" type= "text" id= "comp" name= "computing" disabled>
-            <input class= "in-num" type= "number" id= "inputNum" name= "dig">
+            <input class= "in-num" type= "text" id= "inputNum" name= "dig" disabled>
         </div>
         <div class="keys">
             <div class="key-num">
@@ -35,7 +35,7 @@
                     <button class = "key num-btn" type="button" onclick="numPad(9)">9</button>
                     <button class = "key num-btn" type="button" disabled id="dis">.</button>
                     <button class = "key num-btn" type="button"  onclick="numPad(0)">0</button>
-                    <button class = "key num-btn" type="button" >.</button>
+                    <button class = "key num-btn" type="button" onclick="numPad('.')">.</button>
                 </div>
             </div>
             <div class="op">

@@ -4,13 +4,14 @@ let opr;
 let int = 0, val;
 let disp = '';
 let s = '';
-let temp = 0, i=0;
+let temp = 0, i=0, d=0;
+let x=0, y=0, dec='';
 
 // To get value input by user as a number
 function getNumbers(eleId) {
     let n = document.getElementById(eleId);
     n = n.value;
-    n = parseInt(n);
+    n = parseFloat(n);
     console.log(n);
     return n;
 }
@@ -41,7 +42,7 @@ function getResult() {
     return(result);
 }
 function setOperation(opr) {
-
+    d=0;
 
     document.getElementById('inputNum').value = '';
     switch(opr) {
@@ -75,6 +76,8 @@ function setAllClear() {
     op = '';
     opr = '';
     i=0;
+    d=0;
+    x=0;
 
 }
 function backSpace() {
@@ -84,8 +87,25 @@ function backSpace() {
 
 
 function numPad(num) {
-    document.getElementById('inputNum').value = document.getElementById('inputNum').value + num;
-    
+    if(num==".") {
+        dec=document.getElementById('inputNum').value;
+            if(dec.includes(".")==false || dec.endsWith('.')){
+                if(d==0) {
+                    document.getElementById('inputNum').value = document.getElementById('inputNum').value + num;
+                    d=1;
+                } else {
+                    document.getElementById('inputNum').value = document.getElementById('inputNum').value.slice(0, -1 ) ;
+                    d=0;
+                    }
+            } 
+    } else {
+        document.getElementById('inputNum').value = document.getElementById('inputNum').value + num; 
+    }
+}
+
+function numDec() {
+    a = parseFloat(getNumbers('inputNum'));
+    console.log(a);
 }
 
 function numSign() {
@@ -93,16 +113,21 @@ function numSign() {
 }
 
 function processFun(opr) {
-    if(i==0) {
-        a = getNumbers("inputNum");
-        setOperation(opr);
-        i++;
-    }
-    else {
-        temp = getResult();
-        a = temp;
-        setOperation(opr);
-    }
+    d=0;
+    x=0;
+    //y=y+1
+    //if(y==1){
+        if(i==0) {
+            a = getNumbers("inputNum");
+            setOperation(opr);
+            i++;
+        }
+        else {
+            temp = getResult();
+            a = temp;
+            setOperation(opr);
+        }
+    //}
 }
 // issue when number is not initialized first
 // function setNumber(val) {
