@@ -87,6 +87,8 @@ function backSpace() {
 
 
 function numPad(num) {
+
+    //TODO one . issue - if . is pressed after clearing result till . and the typing . right after the . , the .  reappears
     if(num==".") {
         dec=document.getElementById('inputNum').value;
             if(dec.includes(".")==false || dec.endsWith('.')){
